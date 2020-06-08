@@ -24,7 +24,7 @@ C:\Users\rob.OSCDUBAI\AppData\Roaming\npm\create-react-app -> C:\Users\rob.OSCDU
 added 98 packages from 46 contributors in 19.577s
 ```
 
-To create aaplication: 
+To create application: 
 
 ```gitattributes
 Rob@Rob-Laptop MINGW64 ~
