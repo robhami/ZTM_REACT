@@ -183,3 +183,17 @@ Can edit index.js and cause it to show "hello World:
 ```
 
 Change to Babel JS to get colours 
+
+now on react 2. If dont in old one just change react-scripts package version in pacakage.json file. 
+
+now on react 3. New way of create an app: 
+
+
+```
+npx create-react-app my-app
+```
+
+npx is a package runner tool that comes with npm 5.2. my-app is choosable.
+
+
+
