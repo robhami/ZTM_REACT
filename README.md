@@ -195,5 +195,71 @@ npx create-react-app my-app
 
 npx is a package runner tool that comes with npm 5.2. my-app is choosable.
 
+Notes on react 3: 
+
+In index.js the following file is now unregister, dont need to worry about this now: 
+```
+serviceWorker.unregister();
+```
+Big change in app.js is App is a function instead of class.
 
 
+```
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+```
+
+So need to convert into previous version: 
+
+```
+
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+class App extends React.Component  {
+  render() { 
+    return(
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+    );
+  
+  }
+}
+
+export default App;
+
+```
