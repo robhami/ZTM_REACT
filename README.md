@@ -2,15 +2,17 @@
 
 Key principles: 
 
-* Components separate not dependant other parts of 
+* Components separate & not dependant other parts of projects
 
 * One way data flow- data loads from top to bottom. Only children know about changes not parents. 
 
 * Virtual DOM- react bot creates virtual DOM which is JS object- then bot works in most optimum way
 
-* Great Ecosystem
+* Great Ecosystem- lots of material, apps and support
 
-Create React App
+#### Create React App ####
+
+Is the app that manages application development. 
 
 To install globally on PC:
 
