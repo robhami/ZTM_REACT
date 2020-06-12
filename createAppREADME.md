@@ -51,7 +51,7 @@ import App from './App';
 
 In app.js class App extends Component:
 
-A component must always render something.
+A component must always render something.This is done by returning a HTML piece of website. 
 
 ```
 
@@ -85,3 +85,34 @@ class App extends React.Component {
 export default App;
 
 ```
+
+Change import and html in index.js (note components e.g. Hello.js are capitalized): 
+
+```
+// import App from './App';
+import Hello from './Hello';
+```
+
+Need to create Hello.js file in src folder.
+
+Add following to Hello.js file: 
+
+```
+import React, {Component} from 'react';
+
+class Hello extends React.Component {
+
+	render() {
+
+		return<h1>Hello World</h1>
+
+	}
+
+}
+
+export default Hello;
+```
+
+
+
+
