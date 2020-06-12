@@ -188,6 +188,7 @@ h1 {
 }
 ```
 
+### Tachhyons ###
 Now install tachyons pacakge: 
 
 ```
@@ -240,7 +241,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
-Then add:
+Then add in hello.js:
 
 ```render() {
 
@@ -253,5 +254,17 @@ Then add:
 		)
 	}
 ```
+ this object - hello has properties greeting in index.js
 
+Can write class Hello as a function: 
+```
+const Hello = (props) => {
 
+	return (
+	<div className="f1 tc">
+	<h1>Hellow World</h1>
+	<p>{props.greeting}</p>
+	</div>
+	);
+}
+```
