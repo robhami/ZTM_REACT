@@ -56,4 +56,73 @@ export default Card;
 document.getElementById('root')
 );
 ```
+### Styling ###
 
+Add inline classname to 
+* bg-light-greencolour dib = background color
+* dib = display inline block (puts them in row)
+* br3 = border 3
+* pa3 = padding 3
+* ma2 = margins 2
+* grow = animation
+* bw 2 =border width 2
+* shadow-5 = shadow 5
+
+```javascript
+const Card = () => {
+	return(
+		<h1>
+	<div className='bg-light-green dib br3 pa3 ma2 grow'>
+		<img alt='' src="https://robohash.org/test?200x200"/>
+		<div>
+			<h2> Jane Doe</h2>
+			<p>jane.doe@gmail.com</p>
+		</div>
+	</div>
+	);
+}
+```
+
+### Props to change names ###
+
+Create new file called robots.js in src folder.
+
+Add objects with robot details: 
+
+```javascript
+export const robots = {
+	{ 
+		id: 1,
+		name: 'Rob Hamilton',
+		username: 'RoboMan',
+		email: 'roboman@gmail.com'
+	},
+
+	{ 
+		id: 2,
+		name: 'Luisa Hamilton',
+		username: 'RoboWoMan',
+		email: 'roboWoMan@gmail.com'
+	},
+	{ 
+		id: 3,
+		name: 'Elodie Hamilton',
+		username: 'Eddie-bot',
+		email: 'Edmund-bot@gmail.com'
+	},
+	{ 
+		id: 4,
+		name: 'Jack Hamilton',
+		username: 'RoboMecahnic',
+		email: 'mech-robo@gmail.com'
+	},
+	
+
+}
+```
+
+Then add to index.js:
+
+``` 
+import robots from './'
+```
