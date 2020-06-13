@@ -20,7 +20,6 @@ ReactDOM.render(
 ### Create Card.js ###
 
 Create new file called Card.js in src folder. Then add the following to it, it is doing the function method as opposed to React class way: 
-
 ```javascript
 
 import React from 'react';
@@ -39,7 +38,6 @@ const Card = () => {
 export default Card;
 
 ```
-
 * Need to have alt properties for images
 * Need to have React to read the JSX (even though not using class React way)
 * Robohash website gives robot picture that varies based on last string in url. 
@@ -49,7 +47,6 @@ export default Card;
  ### Create multiple cards using index.js ###
  
  Add:
- 
  ```javascript
  ReactDOM.render(
  <div>
