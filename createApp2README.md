@@ -183,6 +183,8 @@ Then just need:
 
 ``` <p> {email}</p> ```
 
+Code:
+
 ```javascript
 <img alt='' src={`https://robohash.org/${props.id}?200x200`} />
 
