@@ -37,7 +37,7 @@ React allows us to add specific css for each component (e.g. index.js has ./inde
 
 Service worker (not covered in this course) but they allow apps to work faster and potentially offline. Can comment out if you want but will leave it.
 
-### index.js just Hello World ###
+### index.js (with Hello World) ###
 Code below says I want reactDOM package to render
 
 ```javascript
@@ -91,7 +91,9 @@ class App extends React.Component {
 export default App;
 
 ```
-### index.js ###
+### index.js (connect to Hello.js)* ###
+
+*the new App.js- created in next section)
 
 Change import and html in index.js (note components e.g. Hello.js are capitalized): 
 
