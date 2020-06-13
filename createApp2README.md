@@ -12,10 +12,8 @@ Delete all the files we don't need:
 Add Card tag to index.js: 
 
 ```javascript
-ReactDOM.render(
- 
-  <Card/>,
-	
+ReactDOM.render( 
+  <Card/>,	
   document.getElementById('root')
 );
 ```
@@ -37,9 +35,7 @@ const Card = () => {
 		</div>
 	</div>
 	);
-
 }
-
 export default Card;
 
 ```
@@ -48,7 +44,7 @@ export default Card;
 * Need to have React to read the JSX (even though not using class React way)
 * Robohash website gives robot picture that varies based on last string in url. 
 * ?200x200 dictates width and height of card- this is specific to Robohash site- I believe. 
-* Can only return one element (<div>) with elements indented within. So can't add Title (h1) above div.
+* Can only return one element (div) with elements indented within. So can't add Title (h1) above div.
   
  ### Create multiple cards using index.js ###
  
@@ -61,7 +57,6 @@ export default Card;
   	<Card/>
   	<Card/>
 </div>
-
 ,
 document.getElementById('root')
 );
