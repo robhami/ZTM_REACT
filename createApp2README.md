@@ -21,7 +21,7 @@ ReactDOM.render(
 ```
 ### Create Card.js ###
 
-Create new file called Card.js Then add the following to it, it is doing the function method as opposed to React class way: 
+Create new file called Card.js in src folder. Then add the following to it, it is doing the function method as opposed to React class way: 
 
 ```javascript
 
@@ -48,7 +48,7 @@ export default Card;
 * Need to have React to read the JSX (even though not using class React way)
 * Robohash website gives robot picture that varies based on last string in url. 
 * ?200x200 dictates width and height of card- this is specific to Robohash site- I believe. 
-* can only return one element (<div>) with elements indented within. So can't add Title (h1) above div.
+* Can only return one element (<div>) with elements indented within. So can't add Title (h1) above div.
   
  ### Create multiple cards using index.js ###
  
