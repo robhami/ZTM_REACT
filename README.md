@@ -34,7 +34,7 @@ $ create-react-app robofriends
 
 To start React App: 
 
-```
+```gitAttributes
 Rob@Rob-Laptop MINGW64 ~/robofriends (master)
 $ npm start
 ```
