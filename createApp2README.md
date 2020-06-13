@@ -1,7 +1,6 @@
 ## Create App #2 ##
 
 Delete all the files we don't need: 
-
 * Hello.js
 * Hello.css
 * App.js
@@ -10,7 +9,6 @@ Delete all the files we don't need:
 * Logo.svg
 
 Add Card tag to index.js: 
-
 ```javascript
 ReactDOM.render( 
   <Card/>,	
