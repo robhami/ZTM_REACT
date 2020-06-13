@@ -11,7 +11,7 @@ Delete all the files we don't need:
 
 Add Card tag to index.js: 
 
-```
+```javascript
 ReactDOM.render(
  
   <Card/>,
@@ -44,13 +44,13 @@ export default Card;
 
 ```
 
-* Need tp have alt properties for images
+* Need to have alt properties for images
 * Need to have React to read the JSX (even though not using class React way)
 * Robohash website gives robot picture that varies based on last string in url. 
 * ?200x200 dictates width and height of card- this is specific to Robohash site- I believe. 
 * can only return one element (<div>) with elements indented within. So can't add Title (h1) above div.
   
- ### Create multiple using index.js ###
+ ### Create multiple cards using index.js ###
  
  Add:
  
