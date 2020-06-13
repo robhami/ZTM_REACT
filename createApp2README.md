@@ -2,12 +2,12 @@
 
 Delete all the files we don't need: 
 
-Hello.js
-Hello.css
-App.js
-App.css
-App.Test
-Logo.svg
+* Hello.js
+* Hello.css
+* App.js
+* App.css
+* App.Test
+* Logo.svg
 
 Add Card tag to index.js: 
 
