@@ -3,7 +3,8 @@
 
 ### Overview of files ###
 In index.js comment out:
-```
+
+```javascript
 import App from './App';
 ```
 
