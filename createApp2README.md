@@ -58,7 +58,8 @@ document.getElementById('root')
 ```
 ### Styling ###
 
-Add inline classname to 
+Add inline classname to:
+* tc = text center
 * bg-light-greencolour dib = background color
 * dib = display inline block (puts them in row)
 * br3 = border 3
@@ -90,7 +91,7 @@ Create new file called robots.js in src folder.
 Add objects with robot details: 
 
 ```javascript
-export const robots = {
+export const robots = [
 	{ 
 		id: 1,
 		name: 'Rob Hamilton',
@@ -118,11 +119,88 @@ export const robots = {
 	},
 	
 
-}
+]
 ```
 
-Then add to index.js:
+Then add to index.js. Need curly brackets if not a default filename, also can put multiple filenames in here:
 
 ``` 
-import robots from './'
+import { robots } from './robots'
+```
+
+Then change cards to link them to robot.js object number and associated property using properties curly brackets: 
+
+```
+ReactDOM.render(
+ <div>
+  	<Card id={robots[0].id} name={robots[0].name} email={robots[0].email}/>
+  	<Card id={robots[1].id} name={robots[1].name} email={robots[1].email}/>
+  	<Card id={robots[2].id} name={robots[2].name} email={robots[2].email}/>
+  	<Card id={robots[3].id} name={robots[3].name} email={robots[3].email}/>
+  	
+</div>
+
+,
+document.getElementById('root')
+);
+```
+
+Need card.js to accept parameters, put props as function input and {props.name} and {props.email} to h2 and p tags: 
+
+```javascript
+const Card = (props) => {
+	return(
+	
+	<div className='bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
+		<img alt='' src="https://robohash.org/test?200x200"/>
+		<div>
+			<h2> {props.name}</h2>
+			<p> {props.email}</p>
+		</div>
+	</div>
+	);
+
+}
+
+export default Card;
+
+```
+
+### Robo image dynamic using id ###
+
+Use template string to change Robot based on id in Card.js file:
+
+
+
+### Use variable to add props ###
+Can add: 
+* const {name, email, id} =props;
+Then just need:
+* <h2> {name}</h2>
+* <p> {email}</p>
+
+```javascript
+<img alt='' src={`https://robohash.org/${props.id}?200x200`} />
+
+
+import React from 'react';
+
+const Card = (props) => {
+	
+	const {name, email, id} =props;
+	return(
+	
+
+	<div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
+		<img alt='' src={`https://robohash.org/${props.id}?200x200`} />
+		<div>
+			<h2> {name}</h2>
+			<p> {email}</p>
+		</div>
+	</div>
+	);
+
+}
+
+export default Card;
 ```
