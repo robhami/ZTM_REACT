@@ -174,9 +174,13 @@ Use template string to change Robot based on id in Card.js file:
 
 ### Use variable to add props ###
 Can add: 
+
 ``` const {name, email, id} =props;```
+
 Then just need:
+
 ``` <h2> {name}</h2> ```
+
 ``` <p> {email}</p> ```
 
 ```javascript
