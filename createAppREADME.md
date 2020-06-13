@@ -23,7 +23,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 ```
-This is because React has webpack that does the bundling for us. 
+This is because React has webpack that does the bundling/Browserify for us. 
 
 React is a view library (little robot that does DOM manipulation for us). Can be used in places other than browser e.g. mobile apps. 
 
