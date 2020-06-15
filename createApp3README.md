@@ -1,15 +1,13 @@
+## Create App 3 ##
 
-In index.js:
-```javascript
-import CardList from './CardList'
-
-```
-Then cut robot elements from index.js to CardList.js: 
+### CardList.js ###
+Create card list and cut robot elements from index.js to be rendered there and add {robots} as destructured input to CardlIst function: 
 
 ```javascript
 import React from 'react';
+import Card from './Card';
 
-const CardList = () => {
+const CardList = ({robots}) => {
 	return (
 
 	 <div>
@@ -25,13 +23,29 @@ const CardList = () => {
 
 }
 
+export default CardList;
 ```
-Change index.js to just render CardList: 
+### In index.js:###
+
+Import Cardlist and change index.js to just render CardList: 
 ```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+// import App from './App';
+import Card from './Card';
+import CardList from './CardList';
+import * as serviceWorker from './serviceWorker';
+import 'tachyons';
+import { robots } from './robots';
+
 ReactDOM.render(
 
-	<CardList />
+	<CardList robots={robots}/>
 ,
 document.getElementById('root')
 );
+
+serviceWorker.unregister();
+
 ```
