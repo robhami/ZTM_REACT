@@ -49,3 +49,30 @@ document.getElementById('root')
 serviceWorker.unregister();
 
 ```
+### In card.js automate extract from robot object/array ###
+
+Create function that maps (loops) through objects and extracts index (i) and uses this to pull each index: 
+
+```
+import React from 'react';
+import Card from './Card';
+
+const CardList = ({robots}) => {
+	const cardComponent = robots.map((user, i) => {
+
+		return <Card id={robots[i].id} name={robots[i].name} email={robots[i].email}/>
+	})
+	return (
+
+	 <div>
+	 
+	  	{cardComponent}
+	  	
+	</div>
+
+		);
+
+
+}
+
+export default CardList;
