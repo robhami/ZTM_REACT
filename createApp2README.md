@@ -41,7 +41,33 @@ export default Card;
 * Robohash website gives robot picture that varies based on last string in url. 
 * ?200x200 dictates width and height of card- this is specific to Robohash site- I believe. 
 * Can only return one element (div) with elements indented within. So can't add Title (h1) above div.
+  THIS HAS CHANGED NOW YOU CAN USE FRAGMENT: 
   
+```
+import React, { Fragment } from "react"
+
+const Headings = props => {
+  return (
+    <Fragment>
+      <h1>{props.title}</h1>
+      <p>{props.subtitle}</p>
+    </Fragment>
+  )
+}
+
+```
+Can also use <> to rep fragment: 
+```
+const Headings = props => {
+  return (
+    <>
+      <h1>{props.title}</h1>
+      <p>{props.subtitle}</p>
+    </>
+  )
+}
+
+```
  ### Create multiple cards using index.js ###
  
  Add:
