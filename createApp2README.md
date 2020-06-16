@@ -1,4 +1,4 @@
-## Create App 3 ##
+## Create App 2 ##
 
 ### CardList.js ###
 Create card list and cut robot elements from index.js to be rendered there and add {robots} as destructured input to CardList function: 
