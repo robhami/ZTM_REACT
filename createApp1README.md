@@ -1,4 +1,4 @@
-## Create App #2 ##
+## Create App #1 ##
 
 Delete all the files we don't need: 
 * Hello.js
