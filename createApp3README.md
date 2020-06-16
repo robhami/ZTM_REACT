@@ -49,24 +49,60 @@ document.getElementById('root')
 serviceWorker.unregister();
 
 ```
-### In card.js loop extract from robot object/array ###
+### In CardList.js loop extract from robot object/array ###
 
 Create function that maps (loops) through objects and extracts index (i) and uses this to pull each index: 
 
 ```javascript
 import React from 'react';
 import Card from './Card';
-
 const CardList = ({robots}) => {
-	const cardComponent = robots.map((user, i) => {
-		return <Card id={robots[i].id} name={robots[i].name} email={robots[i].email}/>
-	})
+	const cardArray = robots.map((user, i) => {
+		return (
+		<Card 
+		key={robots[i].id} 
+		id={robots[i].id} name={robots[i].name} email={robots[i].email}
+		/>
+		)
+	})	
 	return (
-	<div> 
-	  	{cardArray}  	
+	 <div>
+	  	{cardArray}	
 	</div>
-		);
+
+	);
 }
 
 export default CardList;
+
+
+```
+Above- have to assign a key prop to each child in array (e.g. Robots). Otherwise if card get deleted entire DOM has to change as React won't have an identifier. This overworks DOM. id is a good choice for a key because it doesn't change, this is better if things get moved.  
+Can also just add all cardArray code into a return and not require const cardArray:
+
+```
+import React from 'react';
+import Card from './Card';
+
+const CardList = ({robots}) => {
+	return (
+		
+		<div>
+			{
+				robots.map((user, i) => {
+					return(
+						<Card 
+						key={robots[i].id} 
+						id={robots[i].id} name={robots[i].name} email={robots[i].email}
+						/>
+					);
+				})
+			}
+		</div>
+
+	);
+}
+
+export default CardList;
+
 ```
