@@ -1,7 +1,7 @@
 ## Create App 3 ##
 
 ### CardList.js ###
-Create card list and cut robot elements from index.js to be rendered there and add {robots} as destructured input to CardlIst function: 
+Create card list and cut robot elements from index.js to be rendered there and add {robots} as destructured input to CardList function: 
 
 ```javascript
 import React from 'react';
@@ -49,7 +49,7 @@ document.getElementById('root')
 serviceWorker.unregister();
 
 ```
-### In card.js automate extract from robot object/array ###
+### In card.js loop extract from robot object/array ###
 
 Create function that maps (loops) through objects and extracts index (i) and uses this to pull each index: 
 
@@ -59,20 +59,14 @@ import Card from './Card';
 
 const CardList = ({robots}) => {
 	const cardComponent = robots.map((user, i) => {
-
 		return <Card id={robots[i].id} name={robots[i].name} email={robots[i].email}/>
 	})
 	return (
-
-	 <div>
-	 
-	  	{cardComponent}
-	  	
+	<div> 
+	  	{cardComponent}  	
 	</div>
-
 		);
-
-
 }
 
 export default CardList;
+```
