@@ -53,7 +53,7 @@ serviceWorker.unregister();
 
 Create function that maps (loops) through objects and extracts index (i) and uses this to pull each index: 
 
-```
+```javascript
 import React from 'react';
 import Card from './Card';
 
