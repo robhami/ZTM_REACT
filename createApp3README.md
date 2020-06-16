@@ -78,7 +78,8 @@ export default CardList;
 
 ```
 Above- have to assign a key prop to each child in array (e.g. Robots). Otherwise if card get deleted entire DOM has to change as React won't have an identifier. This overworks DOM. id is a good choice for a key because it doesn't change, this is better if things get moved.  
-Can also just add all cardArray code into a return and not require const cardArray:
+
+Below-Can also just add all cardArray code into a return and not require const cardArray:
 
 ```javascript
 import React from 'react';
