@@ -8,7 +8,7 @@ import App from './App';
 
 ### Build App.js ###
 
-Need to copy and return ```<CardList robots={robots}/> from index.js```. Then import files: React, CardList, robots. 
+Need to copy and return ```<CardList robots={robots}/> ``` from index.js. Then import files: React, CardList, robots. 
 Then import and add Search box.
 
 ```
@@ -29,3 +29,6 @@ const App = () => {
 }
 export default App;
 ```
+### SearchBox.js ###
+
+
