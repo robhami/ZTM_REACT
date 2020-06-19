@@ -127,3 +127,42 @@ export default App;
 * Cardlist.js accepts "robots" as a prop whereas App.js accept it as a "state".
 * App now owns state that includes "robots", so its allowed to change it.
 
+### add onSearchChange function ###
+
+Need to create a function can be called a different name (i.e. name does not cause anything). Everytime the input changes we get an event. This event is then console.logged. 
+
+Can pass this function to searchBox tag by defining searchChange ```<SearchBox searchChange={this.onSearchChange}/>```
+
+```
+class App extends Component {
+	constructor () {
+		super()
+		this.state = {
+			robots: robots,
+			searchfield: ''
+
+		}
+	}
+
+	onSearchChange(event){
+		console.log(event);
+
+
+	}
+
+		render () {
+			return (
+				<div className="tc">
+				<h1>RoboFriends</h1>
+				<SearchBox searchChange={this.onSearchChange}/>
+				<CardList robots={this.state.robots}/>
+				</div>
+			);
+		}
+
+}
+
+export default App;
+
+```
+Need to edit SearchBox.js
