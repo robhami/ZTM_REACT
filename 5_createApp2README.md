@@ -2,7 +2,8 @@
 
 ### index.js ###
 Delete  CardList.js add App.js instead : 
-```
+
+```javascript
 import App from './App';
 ```
 
@@ -11,7 +12,7 @@ import App from './App';
 Need to copy and return ```<CardList robots={robots}/> ``` from index.js. Then import files: React, CardList, robots. 
 Then import and add Search box.
 
-```
+```javascript
 import React from 'react';
 import CardList from './CardList';
 import {robots} from './robots';
@@ -29,11 +30,13 @@ const App = () => {
 }
 export default App;
 ```
+NB I commented out import robots and card in index.js because they showed as not being used. 
+
 ### SearchBox.js ###
 
 Create new Searbox.js file. Then add following: 
 
-```
+```javascript
 import React from 'react';
 
 const SearchBox = () => {
@@ -48,11 +51,11 @@ const SearchBox = () => {
 
 export default SearchBox;
 ```
-NB I commented out import robots and card in index.js because they showed as not being used. 
+
 
 In App.js center everything by adding className="tc":
 
-```
+```javascript
 const App = () => {
 
 	return(
@@ -87,30 +90,40 @@ The child can't change that property
 
 ### Rewrite App ###
 
-Need to define State info and rewrite function in class declaration method seen at start: 
+Need to rewrite function in class declaration method seen at start and define State info in constructor: 
 
-```
+```javascript
 import React, { Component } from 'react';
 import CardList from './CardList';
 import {robots} from './robots';
 import SearchBox from './SearchBox';
 
-
-const state = {
-	robots: robots,
-	searchfield: ''
-}
-
 class App extends Component {
+	constructor () {
+		super()
+		this.state = {
+			robots: robots,
+			searchfield: ''
+		}
+	}
+
 	render () {
 		return (
 			<div className="tc">
 			<h1>RoboFriends</h1>
 			<SearchBox />
-			<CardList robots={robots}/>
+			<CardList robots={this.state.robots}/>
 			</div>
 		);
 	}
+
 }
 
 export default App;
+
+```
+
+* Now accessing robots from ```this.state.robots``` i.e. the constructor and not import lines at top. 
+* Cardlist.js accepts "robots" as a prop whereas App.js accept it as a "state".
+* App now owns state that includes "robots", so its allowed to change it.
+
