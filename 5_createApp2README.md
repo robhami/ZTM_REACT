@@ -84,9 +84,9 @@ The state in this app is the robots and whatever is entered in searchbox. We are
 
 Props are thing that come out of state. 
 
-A parent feeds state into a child component
-When child component receives a state its a property
-The child can't change that property
+* A parent feeds state into a child component
+* When child component receives a state its a property
+* The child can't change that property
 
 ### Rewrite App ###
 
@@ -127,7 +127,7 @@ export default App;
 * Cardlist.js accepts "robots" as a prop whereas App.js accept it as a "state".
 * App now owns state that includes "robots", so its allowed to change it.
 
-### add onSearchChange function ###
+### add onSearchChange function in App.js ###
 
 Need to create a function can be called a different name (i.e. name does not cause anything). Everytime the input changes we get an event. This event is then console.logged. 
 
@@ -167,7 +167,7 @@ export default App;
 ```
 Need to edit SearchBox.js function by adding searchChange as a destructured props object (i.e. getting the props from it). Then adding a onChange eventlistener to the input: 
 
-```
+```javascript
 
 import React from 'react';
 
@@ -200,7 +200,7 @@ Create variable called filteredRobots and this will equal "this.state.robots" th
 
 * Self made function as opposed to in-built React ones, must use syntax shown below e.g. function name = (input) =>{}
 * to assign value to searchfield, you have to use this.setState
-```
+```javascript
 onSearchChange = (event) =>{
 	this.setState({searchfield: event.target.value})	
 		const filteredRobots = this.state.robots.filter(robot => {
@@ -217,7 +217,7 @@ onSearchChange = (event) =>{
 
 Can move filteredRobots variable to render section and pass it to cardList.js: 
 
-```
+```javascript
 	onSearchChange = (event) =>{
 
 		this.setState({ searchfield: event.target.value})
