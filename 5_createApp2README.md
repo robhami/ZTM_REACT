@@ -72,17 +72,17 @@ const App = () => {
 
 Because 1-way data flow components need to send data to their parent, so parent can communicate with other child components.
 
-props are sent to functions and processed. These are pure functions/components. They don't need to know anything apart from what they receive and how to process them. 
+Props are sent to functions and processed. These are pure functions/components. They don't need to know anything apart from what they receive and how to process them. 
 
 In this case we need to update a component. 
 
-State is required. State means adescription of your app. Its an object that describes your application.
+State is required. State means a description of your app. Its an object that describes your application.
 
-The state in this app is the robots and whatever is entered in searchbox. We are able to change:
+The state in this app is: 1. the robots and 2. whatever is entered in searchbox. We are able to change:
 * What the robots array means (i.e. what gets displayed)
 * Whatever is entered in the seachbox
 
-Props are thing that come out of state. 
+Props are things that come out of state. 
 
 * A parent feeds state into a child component
 * When child component receives a state its a property
