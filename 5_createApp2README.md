@@ -133,7 +133,7 @@ Need to create a function can be called a different name (i.e. name does not cau
 
 Can pass this function to searchBox tag by defining searchChange ```<SearchBox searchChange={this.onSearchChange}/>```
 
-```
+```javascript
 class App extends Component {
 	constructor () {
 		super()
@@ -145,7 +145,7 @@ class App extends Component {
 	}
 
 	onSearchChange(event){
-		console.log(event);
+		console.log(event.target.value);
 
 
 	}
@@ -165,4 +165,84 @@ class App extends Component {
 export default App;
 
 ```
-Need to edit SearchBox.js
+Need to edit SearchBox.js function by adding searchChange as a destructured props object (i.e. getting the props from it). Then adding a onChange eventlistener to the input: 
+
+```
+
+import React from 'react';
+
+const SearchBox = ({searchChange}) => {
+
+	return (
+		<div className="pa2">
+			<input 
+			className="pa3 ba b--green bg-lightest-blue" 
+			type="search" 
+			placeholder="search robots"
+			onChange={searchChange}
+			/>
+		</div>
+
+		)
+}
+
+export default SearchBox;
+
+```
+Now when type in input field console logs it. 
+
+Everytime onchange event is triggered call the search change function.
+
+Now you have value of search input, can communicate it to robots list to filter it. 
+
+
+Create variable called filteredRobots and this will equal "this.state.robots" that is filtered based on searchfield variable (robot). Lowercase used to help matching.
+
+* Self made function as opposed to in-built React ones, must use syntax shown below e.g. function name = (input) =>{}
+* to assign value to searchfield, you have to use this.setState
+```
+onSearchChange = (event) =>{
+	this.setState({searchfield: event.target.value})	
+		const filteredRobots = this.state.robots.filter(robot => {
+			
+			return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+		
+
+		})
+		console.log(filteredRobots);
+
+	}
+	
+```
+
+Can move filteredRobots variable to render section and pass it to cardList.js: 
+
+```
+	onSearchChange = (event) =>{
+
+		this.setState({ searchfield: event.target.value})
+		
+	}
+
+		render () {
+			
+			const filteredRobots = this.state.robots.filter(robot => {
+
+			return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+			
+			})
+
+			return (
+				<div className="tc">
+				<h1>RoboFriends</h1>
+				<SearchBox searchChange={this.onSearchChange}/>
+				<CardList robots={filteredRobots}/>
+				</div>
+			);
+		}
+
+}
+
+export default App;
+
+```
