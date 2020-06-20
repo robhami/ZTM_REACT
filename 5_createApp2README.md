@@ -34,7 +34,7 @@ NB I commented out import robots and card in index.js because they showed as not
 
 ### SearchBox.js ###
 
-Create new Searbox.js file. Then add following: 
+Create new Searchbox.js file. Then add following: 
 
 ```javascript
 import React from 'react';
