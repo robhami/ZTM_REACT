@@ -84,7 +84,7 @@ componentDidMount() {
 	}
 
 ```
-Can set state to robots from robots.js file when it mounts: 
+Can set state to robots from robots.js file when it mounts, need to do this because array is now set to empty: 
 
 ```
 componentDidMount() {
@@ -167,6 +167,23 @@ This is same order as given in React readme notes (i.e. above under Mount headin
 * render()
 * componentDidMount()
 
+Why did render run again? Because state gets updated in componentDidMount. Everytime state changes - go through Updating lifecycle (see Updating heading above) and runs render again. It goes from empty array to robots list, render get rerun and the virtual DOM notices and adds the robots.
 
+Can now pull from API as follows, remove ```import {robots} from './robots';``` then do : 
+
+```
+componentDidMount() {
+	fetch ('https://jsonplaceholder.typicode.com/users')
+		.then(response =>{
+				return response.json();
+
+	})
+
+	.then(users=> {
+			this.setState({ robots: users });
+			console.log('componentDidMount');
+	});
+}
+```
 
 https://jsonplaceholder.typicode.com/users
