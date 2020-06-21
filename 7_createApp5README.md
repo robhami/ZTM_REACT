@@ -60,14 +60,13 @@ These lifecycle hooks run every time a component does something and come with Re
 
 If you are grabbing users via API from somewhere else on web. Need to change robots to empty array
 
-```
+```javascript
 class App extends Component {
 	constructor () {
 		super()
 		this.state = {
 			robots: [],
 			searchfield: ''
-
 		}
 	}
 ```
@@ -76,28 +75,22 @@ class App extends Component {
 
 Can add this and it will console log when app opens, showing that component mounted:
 
-```
+```javascript
 componentDidMount() {
-
 		console.log('check');
-
 	}
-
 ```
 Can set state to robots from robots.js file when it mounts, need to do this because array is now set to empty: 
 
-```
+```javascript
 componentDidMount() {
-
 		this.setState({ robots: robots });
-
-	}
-	
+	}	
 ```
 
 Add console.logs to see what parts of the code run when: 
 
-```
+```javascript
 import React, { Component } from 'react';
 import CardList from './CardList';
 import {robots} from './robots';
@@ -110,48 +103,31 @@ class App extends Component {
 		this.state = {
 			robots: [],
 			searchfield: ''
-
 		}
 		console.log('constructor');
 	}
-
-
 	componentDidMount() {
-
 		this.setState({ robots: robots });
 		console.log('componentDidMount');
-
 	}
-
-
-
 	onSearchChange = (event) =>{
-
-		this.setState({ searchfield: event.target.value})
-		
+		this.setState({ searchfield: event.target.value})	
 	}
-
-		render () {
-			
-			const filteredRobots = this.state.robots.filter(robot => {
-
-			return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
-			
-			})
-				console.log('render');
-			return (
-				<div className="tc">
-				<h1 className="f1">RoboFriends</h1>
-				<SearchBox searchChange={this.onSearchChange}/>
-				<CardList robots={filteredRobots}/>
-				</div>
-			);
-		}
-
+	render () {
+		const filteredRobots = this.state.robots.filter(robot => {
+		return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+		})
+		console.log('render');
+		return (
+			<div className="tc">
+			<h1 className="f1">RoboFriends</h1>
+			<SearchBox searchChange={this.onSearchChange}/>
+			<CardList robots={filteredRobots}/>
+			</div>
+		);
+	}
 }
-
 export default App;
-
 ```
 Console displays this order (same as  
 
@@ -171,14 +147,12 @@ Why did render run again? Because state gets updated in componentDidMount. Every
 
 Can now pull from API as follows, remove ```import {robots} from './robots';``` then do : 
 
-```
+```javascript
 componentDidMount() {
 	fetch ('https://jsonplaceholder.typicode.com/users')
 		.then(response =>{
 				return response.json();
-
 	})
-
 	.then(users=> {
 			this.setState({ robots: users });
 			console.log('componentDidMount');
@@ -191,28 +165,22 @@ window.fetch;
 ƒ fetch() { [native code] }
 ```
 Can add loading message when delayed: 
-```
-render () {
-			
-			const filteredRobots = this.state.robots.filter(robot => {
-
-					return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
-			
-					})
-			
-			if (this.state.robots.length ===0) {
-
-				return <h1>Loading</h1>
-			} else {
-
-			return (
-				<div className="tc">
-				<h1 className="f1">RoboFriends</h1>
-				<SearchBox searchChange={this.onSearchChange}/>
-				<CardList robots={filteredRobots}/>
-				</div>
-			);
-		}
+```javascript
+render () {			
+	const filteredRobots = this.state.robots.filter(robot => {
+		return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+		})
+	if (this.state.robots.length ===0) {
+		return <h1>Loading</h1>
+	} else {
+	return (
+		<div className="tc">
+		<h1 className="f1">RoboFriends</h1>
+		<SearchBox searchChange={this.onSearchChange}/>
+		<CardList robots={filteredRobots}/>
+		</div>
+	);
 	}
+}
 ```
 https://jsonplaceholder.typicode.com/users
