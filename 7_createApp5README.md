@@ -167,7 +167,7 @@ This is same order as given in React readme notes (i.e. above under Mount headin
 * render()
 * componentDidMount()
 
-Why did render run again? Because state gets updated in componentDidMount. Everytime state changes - go through Updating lifecycle (see Updating heading above) and runs render again. It goes from empty array to robots list, render get rerun and the virtual DOM notices and adds the robots.
+Why did render run again? Because state gets updated in componentDidMount. Everytime state changes - go through updating lifecycle (see Updating heading above) and runs render again. It goes from empty array to robots list, render gets rerun and the virtual DOM notices and adds the robots.
 
 Can now pull from API as follows, remove ```import {robots} from './robots';``` then do : 
 
@@ -185,5 +185,34 @@ componentDidMount() {
 	});
 }
 ```
+Fetch is an inbuilt method in the browser:
+```
+window.fetch;
+ƒ fetch() { [native code] }
+```
+Can add loading message when delayed: 
+```
+render () {
+			
+			const filteredRobots = this.state.robots.filter(robot => {
 
+					return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+			
+					})
+			
+			if (this.state.robots.length ===0) {
+
+				return <h1>Loading</h1>
+			} else {
+
+			return (
+				<div className="tc">
+				<h1 className="f1">RoboFriends</h1>
+				<SearchBox searchChange={this.onSearchChange}/>
+				<CardList robots={filteredRobots}/>
+				</div>
+			);
+		}
+	}
+```
 https://jsonplaceholder.typicode.com/users
