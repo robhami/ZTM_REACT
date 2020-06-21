@@ -58,8 +58,6 @@ This method is called when a component is being removed from the DOM:
 These lifecycle hooks run every time a component does something and come with React. Can put in class component and they'll automatically get triggered. You dont have to call them. 
 
 
-```
-
 If you are grabbing users via API from somewhere else on web. Need to change robots to empty array
 
 ```
@@ -74,7 +72,100 @@ class App extends Component {
 	}
 ```
 
+### componentDidMount() example ###
 
+Can add this and it will console log when app opens, showing that component mounted:
+
+```
+componentDidMount() {
+
+		console.log('check');
+
+	}
+
+```
+Can set state to robots from robots.js file when it mounts: 
+
+```
+componentDidMount() {
+
+		this.setState({ robots: robots });
+
+	}
+	
+```
+
+Add console.logs to see what parts of the code run when: 
+
+```
+import React, { Component } from 'react';
+import CardList from './CardList';
+import {robots} from './robots';
+import SearchBox from './SearchBox';
+import './App.css';
+
+class App extends Component {
+	constructor () {
+		super()
+		this.state = {
+			robots: [],
+			searchfield: ''
+
+		}
+		console.log('constructor');
+	}
+
+
+	componentDidMount() {
+
+		this.setState({ robots: robots });
+		console.log('componentDidMount');
+
+	}
+
+
+
+	onSearchChange = (event) =>{
+
+		this.setState({ searchfield: event.target.value})
+		
+	}
+
+		render () {
+			
+			const filteredRobots = this.state.robots.filter(robot => {
+
+			return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+			
+			})
+				console.log('render');
+			return (
+				<div className="tc">
+				<h1 className="f1">RoboFriends</h1>
+				<SearchBox searchChange={this.onSearchChange}/>
+				<CardList robots={filteredRobots}/>
+				</div>
+			);
+		}
+
+}
+
+export default App;
+
+```
+Console displays this order (same as  
+
+* constructor
+* render
+* componentDidMount
+* render
+
+This is same order as given in React readme notes (i.e. above under Mount heading):
+
+* constructor()
+* static getDerivedStateFromProps()
+* render()
+* componentDidMount()
 
 
 
