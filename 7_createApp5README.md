@@ -1,5 +1,4 @@
-
-
+## React Methods & Pulling data from API ##
 App.js is a smart component because it has state (a piece of data that describes our app). Whereas other components are just pure functions.
 
 Method that come with React (called lifecycle hooks because they auto trigger when app gets loaded):
@@ -11,7 +10,7 @@ https://reactjs.org/docs/react-component.html
 When click refresh the App.js component gets mounted into the document with the id of 'root'.
 
 In index.js it is rendered to element with id root, this is known as mounting. 
-```
+```javascript
 ReactDOM.render(
 
 	<App/>
@@ -183,4 +182,6 @@ render () {
 	}
 }
 ```
+
+Link to API data:
 https://jsonplaceholder.typicode.com/users
