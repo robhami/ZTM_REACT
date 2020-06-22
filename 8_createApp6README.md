@@ -3,14 +3,14 @@
 In App.js wrap cardList.js in Scroll tag. Plan to create a component called scroll that will allow scrolling but keep header at top. 
 ```javascript
 return (
-				<div className="tc">
-				<h1 className="f1">RoboFriends</h1>
-				<SearchBox searchChange={this.onSearchChange}/>
-				<Scroll>
-				<CardList robots={filteredRobots}/>
-				</Scroll>
-				</div>
-			);
+	<div className="tc">
+	<h1 className="f1">RoboFriends</h1>
+	<SearchBox searchChange={this.onSearchChange}/>
+	<Scroll>
+	<CardList robots={filteredRobots}/>
+	</Scroll>
+	</div>
+	);
 ```
 
 Also import:
@@ -33,8 +33,9 @@ const Scroll = (props) => {
 		);
 };
 export default Scroll;
-``
+```
 Also the console.log shows all the props wrapped in Scroll: 
+
 ```
 {children: {…}}
 children:
@@ -55,6 +56,7 @@ __proto__: Object
 ```
 
 If remove props.children and add <h1> only get the h1- not the CardList:
+
 ```javascript
 import React from 'react';
 
