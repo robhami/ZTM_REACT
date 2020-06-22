@@ -1,4 +1,4 @@
-
+## Clean up project ##
 
 Lot of files in src file. Create folders to clean up: 
 
@@ -25,31 +25,31 @@ Can do desstructuring with:
 ```
 const { robots, searchfield } =this.state;
 ```
-in the render section to stop repeating this.state:
+So in the render section to stop repeating "this.state" i.e. delete "this.state" anytime it appears before "robots" or "searchfield":
 ```
 render () {
-			const { robots, searchfield } =this.state;
-			const filteredRobots = robots.filter(robot => {
+		const { robots, searchfield } =this.state;
+		const filteredRobots = robots.filter(robot => {
 
-					return robot.name.toLowerCase().includes(searchfield.toLowerCase())
-			
-					})
-			
-			if (robots.length ===0) {
+				return robot.name.toLowerCase().includes(searchfield.toLowerCase())
 
-				return <h1>Loading</h1>
-			} else {
+				})
 
-			return (
-				<div className="tc">
-				<h1 className="f1">RoboFriends</h1>
-				<SearchBox searchChange={this.onSearchChange}/>
-				<Scroll>
-				<CardList robots={filteredRobots}/>
-				</Scroll>
-				</div>
-			);
-		}
+		if (robots.length ===0) {
+
+			return <h1>Loading</h1>
+		} else {
+
+		return (
+			<div className="tc">
+			<h1 className="f1">RoboFriends</h1>
+			<SearchBox searchChange={this.onSearchChange}/>
+			<Scroll>
+			<CardList robots={filteredRobots}/>
+			</Scroll>
+			</div>
+		);
 	}
+}
   ```
   
