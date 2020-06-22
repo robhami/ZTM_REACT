@@ -53,3 +53,21 @@ render () {
 }
   ```
   
+Can also tidy this, i.e. if robots.length is false (same as 0) and change if/else to tenary: 
+
+```
+return !robots.length ?
+		<h1>Loading</h1> :
+	(
+		<div className="tc">
+		<h1 className="f1">RoboFriends</h1>
+		<SearchBox searchChange={this.onSearchChange}/>
+		<Scroll>
+		<CardList robots={filteredRobots}/>
+		</Scroll>
+		</div>
+	);
+	
+```
+
+Ctrl c in terminal, then type: "npm run build". This creates all files in optimized style. So can take all in build folder and put it somewhere. 
