@@ -9,7 +9,7 @@ Need to change import lines as follows:
 
 In App.js: 
 
-```
+```javascript
 import CardList from '../Components/CardList';
 import SearchBox from '../Components/SearchBox';
 import Scroll from '../Components/Scroll';
@@ -18,15 +18,15 @@ import Scroll from '../Components/Scroll';
 
 In index.js:
 
-```
+```javascript
 import App from './Containers/App';
 ```
 Can do desstructuring with:
-```
+```javascript
 const { robots, searchfield } =this.state;
 ```
 So in the render section to stop repeating "this.state" i.e. delete "this.state" anytime it appears before "robots" or "searchfield":
-```
+```javascript
 render () {
 		const { robots, searchfield } =this.state;
 		const filteredRobots = robots.filter(robot => {
