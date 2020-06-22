@@ -1,3 +1,6 @@
+## Create Scroll Element ##
+
+
 ### App.js Add scroll element and import ###
 
 In App.js wrap cardList.js in Scroll tag. Plan to create a component called scroll that will allow scrolling but keep header at top. 
@@ -55,7 +58,7 @@ __proto__: Object
 
 ```
 
-If remove props.children and add <h1> only get the h1- not the CardList:
+If remove props.children and add h1 only get the h1- not the CardList:
 
 ```javascript
 import React from 'react';
