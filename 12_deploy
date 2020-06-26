@@ -1,0 +1,7 @@
+Follow instructions below change. Don't forget to change username and project name when adding this to JSON:
+```
+"homepage": "https://myusername.github.io/my-app",
+```
+
+Instructions: 
+https://create-react-app.dev/docs/deployment/
