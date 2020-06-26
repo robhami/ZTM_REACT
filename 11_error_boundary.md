@@ -47,7 +47,8 @@ Wrap CardList in ErrorBoundary tags.
 </Scroll>
 ```
  Create error in CardList.js: 
- ```
+ 
+ ```javascript
 import React from 'react';
 import Card from './Card';
 
@@ -58,6 +59,6 @@ const CardList = ({robots}) => {
 	return (
 ```
 
-This will throw error details in Development mode. IN production mode it will show page with "Something went wrong".
+This will throw error details in Development mode. In production mode it will show page with "Something went wrong".
 
 
