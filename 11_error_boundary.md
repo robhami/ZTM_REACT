@@ -1,8 +1,8 @@
 ## Error Boundary ##
 
-If error in component there wasnt an easy way to fix it. 
+In previous versions of React, if error in component there wasn't an easy way to fix it. 
 
-Create file called ErroBoundary.js in Components:
+Create file called ErrorBoundary.js in Components:
 
 ```javascript
 import React, { Component } from 'react';
@@ -10,8 +10,7 @@ import React, { Component } from 'react';
 class ErrorBoundary extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			
+		this.state = {	
 				hasError: false
 			}
 		}
@@ -47,4 +46,18 @@ Wrap CardList in ErrorBoundary tags.
     </ErrorBoundary>
 </Scroll>
 ```
+ Create error in CardList.js: 
+ ```
+import React from 'react';
+import Card from './Card';
+
+const CardList = ({robots}) => {
+	if (true) {
+		throw new Error("NOOOOOO!");
+	}
+	return (
+```
+
+This will throw error details in Development mode. IN production mode it will show page with "Something went wrong".
+
 
