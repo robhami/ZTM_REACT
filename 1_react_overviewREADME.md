@@ -31,7 +31,10 @@ Rob@Rob-Laptop MINGW64 ~
 $ create-react-app robofriends
 
 ```
-
+Now on React 3. New way of creating an app: 
+```
+npx create-react-app my-app
+```
 To start React App: 
 
 ```gitAttributes
@@ -81,13 +84,13 @@ In JSON file it points to React Scripts that do everything for you.
 
 Eject is used to customize app.
 
-There is also a package -lock.json file. It makes sure versions are correct. 
+There is also a package-lock.json file. It makes sure versions are correct. 
 
 Also have a .gitignore file. It checks if anything needs to be ignored. 
 
 Node modules also created. 
 
-Public folder also created, that has inex.html, manifest.json that allows icon on desktop. 
+Public folder also created, that has index.html, manifest.json that allows icon on desktop. 
 
 Favicon.ico which is little icon that shows up at the top on the tab. 
 
@@ -109,7 +112,7 @@ ReactDOM.render(
 
 ```
 
-It also grabs element id root and ReactDOM renders the <APP/> (this is JSX), can change this to: (<h1>Hello World</h1>:
+It also grabs element id root and ReactDOM renders the <APP/> (this is JSX), can change this to Hello World:
 
 
 ```
@@ -173,21 +176,14 @@ In index.html:
 
 ```
 
-There is just one div with id root- that gets all info to create landing page. This The no script file is just in case a browser isnt using javascript. 
-
-Can edit index.js and cause it to show "hello World: 
-
-```
-
-
-```
+There is just one div with id root- that gets all info to create landing page. The no script message is just in case a browser isnt using javascript. 
 
 Change to Babel JS to get colours 
 
-now on react 2. If dont in old one just change react-scripts package version in pacakage.json file. 
+### React Version Changes ###
+Now on react 2. If dont in old one just change react-scripts package version in pacakage.json file. 
 
-now on react 3. New way of create an app: 
-
+Now on react 3. New way of create an app: 
 
 ```
 npx create-react-app my-app
@@ -197,12 +193,11 @@ npx is a package runner tool that comes with npm 5.2. my-app is choosable.
 
 Notes on react 3: 
 
-In index.js the following file is now unregister, dont need to worry about this now: 
+In index.js the following file is now unregister, don't need to worry about this now: 
 ```
 serviceWorker.unregister();
 ```
 Big change in app.js is App is a function instead of class.
-
 
 ```
 function App() {
@@ -228,7 +223,7 @@ function App() {
 
 ```
 
-So need to convert into previous version: 
+So need to convert into previous version to follow lectures: 
 
 ```
 
