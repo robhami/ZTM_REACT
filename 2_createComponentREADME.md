@@ -202,7 +202,13 @@ Rob@RobPC MINGW64 ~/Documents/coding/Robofriends (master)
 $ npm install tachyons  
 ```
 
-This gives us classes we can use for modifying text (like Bootstrap). 
+This gives us classes we can use for modifying text (like Bootstrap). Need to import it into index .js:
+
+```
+import 'tachyons';
+```
+
+Add ClassName in Hello.js:
 
 ```javascript
 import React from 'react';
