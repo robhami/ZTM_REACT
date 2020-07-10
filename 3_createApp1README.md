@@ -148,7 +148,8 @@ export const robots = [
 ]
 ```
 
-Then add to index.js. Need curly brackets if not a default filename, also can put multiple filenames in here:
+Because this is using export instead of export default this file could have multiple exports. For imports that aren't deafult you have to destructure 
+when add import line to index.js. IE need curly brackets if not a default filename, also can put multiple filenames in here:
 
 ``` 
 import { robots } from './robots'
