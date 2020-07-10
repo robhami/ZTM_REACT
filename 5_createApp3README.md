@@ -6,6 +6,14 @@ Delete  CardList.js add App.js instead :
 ```javascript
 import App from './App';
 ```
+Render App:
+```
+ReactDOM.render(
+<App />
+ 	
+ ,
+  document.getElementById('root'));
+```
 
 ### Build App.js ###
 
