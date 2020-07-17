@@ -2,6 +2,6 @@ Follow instructions below change. Don't forget to change username and project na
 ```
 "homepage": "https://myusername.github.io/my-app",
 ```
-
+Doesnt matter where in json, we did it after name:. 
 Instructions: 
 https://create-react-app.dev/docs/deployment/
