@@ -21,7 +21,7 @@ In index.js:
 ```javascript
 import App from './Containers/App';
 ```
-Can do desstructuring with:
+Can do desstructuring in App.js with:
 ```javascript
 const { robots, searchfield } =this.state;
 ```
