@@ -51,7 +51,7 @@ serviceWorker.unregister();
 ```
 ### In CardList.js loop extract from robot object/array ###
 
-Create function that maps (loops) through objects and extracts index (i) and uses this to pull each index: 
+Create function that maps (loops) through objects and extracts index (i) and uses this to pull each index (this is because index is second parameter of map (https://www.w3schools.com/jsref/jsref_map.asp): 
 
 ```javascript
 import React from 'react';
